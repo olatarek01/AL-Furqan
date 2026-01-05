@@ -45,4 +45,4 @@ Al-Furqan Platform is an interactive website that helps users learn Qur'an recit
 
 🌐 Live Demo
 
-
+https://olatarek01.github.io/AL-Furqan/
