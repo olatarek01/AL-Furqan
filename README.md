@@ -41,4 +41,8 @@ Al-Furqan Platform is an interactive website that helps users learn Qur'an recit
 
 **Al-Furqan Platform** – Your journey to Qur'an learning starts here!  
 
+---
+
+🌐 Live Demo
+
 
