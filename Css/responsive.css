@@ -81,6 +81,13 @@
         height: 24px;
     }
 
+    .main-vee {
+        display: none;
+    }
+
+    .main-navbar {
+        height: 10%;
+    }
 
 
 }
@@ -109,6 +116,11 @@
         width: 18px;
         height: 18px;
     }
+
+    .main-vee {
+        display: none;
+    }
+
 }
 
 
@@ -224,6 +236,25 @@
         box-shadow: none !important;
         outline: none !important;
         border: none !important;
+    }
+
+    .navbar-toggler {
+        height: 10px;
+        width: 10px;
+        margin-bottom: 10px;
+    }
+
+    .navbar-brand img {
+        width: 20px;
+        height: 30px;
+    }
+
+    .nav-left {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        text-align: center;
     }
 }
 
