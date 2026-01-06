@@ -122,6 +122,12 @@
     .img-fluid {
         display: none;
     }
+
+      .navbar-toggler:focus {
+        box-shadow: none !important;
+        outline: none !important;
+        border: none !important;
+    }
 }
 
 
@@ -207,6 +213,12 @@
         box-shadow: none;
         margin-top: 10px;
     }
+
+      .navbar-toggler:focus {
+        box-shadow: none !important;
+        outline: none !important;
+        border: none !important;
+    }
 }
 
 
@@ -227,6 +239,16 @@
 
     .first-see {
         display: flex !important;
+    }
+
+    .navbar-toggler {
+        border: 0 !important;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+        outline: none !important;
+        border: none !important;
     }
 }
 
@@ -1020,6 +1042,8 @@
 
     .add-foot {
         align-items: center;
+        display: flex;
+       
     }
 
     .foot-conn {
