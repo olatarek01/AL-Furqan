@@ -291,22 +291,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const visibleCards = 3;
 
     function updateSlider() {
-      const cardWidth = cards[0].offsetWidth;
-      const step = cardWidth + gap;
-      const maxTranslate = (cards.length - visibleCards) * step;
+  const cardWidth = cards[0].offsetWidth;
+  const step = cardWidth + gap;
 
-      if (currentTranslate < 0) currentTranslate = 0;
-      if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
+  const maxTranslate =
+    Math.max(0, (cards.length * step) - track.parentElement.offsetWidth);
 
-      track.style.transform = `translateX(-${currentTranslate}px)`;
+  currentTranslate = Math.max(0, Math.min(currentTranslate, maxTranslate));
 
-      const activeIndex = Math.round(currentTranslate / step);
-      dotts.forEach((dot) => dot.classList.remove("active"));
-      if (dotts[activeIndex]) dotts[activeIndex].classList.add("active");
+  track.style.transform = `translateX(-${currentTranslate}px)`;
 
-      prev.classList.toggle("disabled", currentTranslate === 0);
-      next.classList.toggle("disabled", currentTranslate === maxTranslate);
-    }
+  const activeIndex = Math.round(currentTranslate / step);
+  dotts.forEach(dot => dot.classList.remove("active"));
+  if (dotts[activeIndex]) dotts[activeIndex].classList.add("active");
+
+  prev.classList.toggle("disabled", currentTranslate === 0);
+  next.classList.toggle("disabled", currentTranslate === maxTranslate);
+}
+
 
     next.addEventListener("click", () => {
       const cardWidth = cards[0].offsetWidth + gap;
