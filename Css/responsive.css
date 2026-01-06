@@ -101,7 +101,7 @@
     }
 
     .theme-toggle {
-        width: 50px;
+        width: 55px;
         height: 24px;
     }
 
@@ -1017,7 +1017,17 @@
     }
 }
 
+@media (max-width: 480px) {
+    .image-wrapper {
+        width: 150px;
+    }
 
+       .image-wrapper img {
+        width: 100px !important;
+        
+        margin: 0 auto 20px;
+    }
+}
 
 
 
