@@ -76,6 +76,12 @@
         margin-top: 10px;
     }
 
+     .theme-toggle {
+        width: 55px;
+        height: 24px;
+    }
+
+
 
 }
 
@@ -933,9 +939,10 @@
     }
 
 
-    .image-wrapper {
-        width: 180px;
-        margin: 0 auto;
+    .image-wrapper img {
+        width: 100px !important;
+        
+        margin: 0 auto 20px;
     }
 
     .img-back {
