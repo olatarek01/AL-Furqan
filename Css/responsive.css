@@ -256,6 +256,8 @@
         align-items: center;
         text-align: center;
     }
+
+
 }
 
 
@@ -287,6 +289,8 @@
         outline: none !important;
         border: none !important;
     }
+
+   
 }
 
 
@@ -302,15 +306,16 @@
 
     .right-head {
         padding: 0;
+      
     }
 
     .words-rig {
-        font-size: 32px;
-        line-height: 48px;
+        font-size: 20px !important;
+        line-height: 35px !important;
     }
 
     .text-rig {
-        font-size: 16px;
+        font-size: 12px !important;
         line-height: 26px;
     }
 
