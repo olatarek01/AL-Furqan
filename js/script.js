@@ -28,7 +28,7 @@ let searchOpen = false;
 window.addEventListener("scroll", () => {
   let current = "";
 
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
 
@@ -40,7 +40,7 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     link.classList.remove("active");
 
     if (link.getAttribute("href") === `#${current}`) {
@@ -48,8 +48,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
-
 
 ///// OPEN ICONS /////
 document.querySelectorAll(".volumeBtn").forEach((volumeBtn) => {
@@ -236,8 +234,6 @@ tabs.forEach((tab) => {
   });
 });
 
-
-
 ///// OPEN PHOTOS && VIDEOS
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -291,24 +287,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const visibleCards = 3;
 
     function updateSlider() {
-  const cardWidth = cards[0].offsetWidth;
-  const step = cardWidth + gap;
+      const cardWidth = cards[0].offsetWidth;
+      const step = cardWidth + gap;
 
-  const maxTranslate =
-    Math.max(0, (cards.length * step) - track.parentElement.offsetWidth);
+      const visibleWidth = track.parentElement.offsetWidth;
+      const totalWidth = track.scrollWidth;
 
-  currentTranslate = Math.max(0, Math.min(currentTranslate, maxTranslate));
+      const maxTranslate = Math.max(0, totalWidth - visibleWidth);
 
-  track.style.transform = `translateX(-${currentTranslate}px)`;
+      if (currentTranslate < 0) currentTranslate = 0;
+      if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
 
-  const activeIndex = Math.round(currentTranslate / step);
-  dotts.forEach(dot => dot.classList.remove("active"));
-  if (dotts[activeIndex]) dotts[activeIndex].classList.add("active");
+      track.style.transform = `translateX(-${currentTranslate}px)`;
 
-  prev.classList.toggle("disabled", currentTranslate === 0);
-  next.classList.toggle("disabled", currentTranslate === maxTranslate);
-}
+      const activeIndex = Math.round(currentTranslate / step);
+      dotts.forEach((dot) => dot.classList.remove("active"));
+      if (dotts[activeIndex]) dotts[activeIndex].classList.add("active");
 
+      prev.classList.toggle("disabled", currentTranslate === 0);
+      next.classList.toggle("disabled", currentTranslate === maxTranslate);
+    }
 
     next.addEventListener("click", () => {
       const cardWidth = cards[0].offsetWidth + gap;
@@ -334,10 +332,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 ///// TESTIMONIALS /////
 document.querySelectorAll(".slider-box").forEach((slider) => {
-
   const track = slider.querySelector(".slider-track");
   const cards = slider.querySelectorAll(".carrdd");
   const prev = slider.querySelector(".arrow.left");
@@ -353,10 +349,9 @@ document.querySelectorAll(".slider-box").forEach((slider) => {
 
     currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
 
-    track.style.transform =
-      `translateX(${currentIndex * cardWidth}px)`;
+    track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
 
-    dots.forEach(d => d.classList.remove("active"));
+    dots.forEach((d) => d.classList.remove("active"));
     if (dots[currentIndex]) dots[currentIndex].classList.add("active");
 
     prev.classList.toggle("disabled", currentIndex === 0);
